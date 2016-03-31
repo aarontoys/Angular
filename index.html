@@ -9,7 +9,32 @@
 <p>Say something to the world <input type="text" ng-model="greeting" ng-init="greeting='Hello, '"></p>
 <p>{{ greeting }} world!</p>
 
+<input type="text" ng-model="name" placeholder="What is your name?" ng-init="name = 'BoJack'">
+
+<h1>My name is {{name}}.</h1>
+
+<label for="singleSelect"> Single select: </label><br>
+    <select name="singleSelect" ng-model="data.singleSelect">
+      <option value="cats">Cats</option>
+      <option value="dogs">Dogs</option>
+      <option value="both">Cats &amp; Dogs</option>
+      <option value="none">Neither</option>
+    </select>
+
+<h3>I love {{data.singleSelect}} &lt;3</h3>
+
+
+    <select name="anything" ng-model="data.ddown">
+      <option value="cats">Cats</option>
+      <option value="dogs">Dogs</option>
+      <option value="both">Cats &amp; Dogs</option>
+      <option value="none">Neither</option>
+    </select>
+
+<h3>I love {{data.ddown}} &lt;3</h3>
+
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<script type="text/javascript" src="vanilla.js"></script>
 
 </body>
 </html>
