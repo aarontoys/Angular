@@ -42,6 +42,25 @@
         <li>{{key}}</li>
       </ul>
     </div>
+    <div class="row"></div>
+    <div class="row" style="background:lightgrey">
+      <h2>ng-hide</h2>
+        <div ng-show='3 + 4 == 5'>
+          3 + 4 isn't 5, don't show
+        </div>
+
+        <div ng-show='3 + 4 == 7'>
+          3 + 4 is 7, do show
+        </div>
+
+        <div ng-hide='3 + 4 == 5'>
+            3 + 4 isn't 5, don't hide
+        </div>
+
+        <div ng-hide='3 + 4 == 7'>
+          3 + 4 is 7, do hide
+        </div>
+    </div>
   </div> 
 </body>
 </html>
