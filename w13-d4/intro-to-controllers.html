@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html ng-app="firstApp">
+<head>
+  <title>Intro to controllers</title>
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+  <script type="text/javascript" src="app.js"></script>
+</head>
+<body>
+  <div class="container">
+    <div class="row" style="background:lightgrey">
+      <div ng-controller="MyFirstController">
+        <h1>Example</h1>
+        <h3>My name is: {{name}}</h3>
+        <input ng-model="name" type="text" placeholder="What is your name">
+      </div>
+      <hr>
+      
+    </div>
+  </div> 
+</body>
+</html>
