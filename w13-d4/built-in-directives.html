@@ -25,7 +25,22 @@
       <ul ng-repeat='dup in dups track by $index'>
         <li>{{dup}}</li>
       </ul>
-      <p>{{dups}}</p>
+    </div>
+    <div class="row"></div>
+    <div class="row"style="background:lightgrey">
+      <h2>ng-repeat over object</h2>
+      <div ng-init='obj={name: "mike", age: 35, title: "Mr."}'></div>
+      <ul ng-repeat='attr in obj'>
+        <li>{{attr}}</li>
+      </ul>
+      <hr>
+      <ul ng-repeat='(key, attr) in obj'>
+        <li>{{key}}: {{attr}}</li>
+      </ul>
+      <hr>
+      <ul ng-repeat='(key, attr) in obj'>
+        <li>{{key}}</li>
+      </ul>
     </div>
   </div> 
 </body>
