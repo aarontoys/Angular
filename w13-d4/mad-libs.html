@@ -13,7 +13,7 @@
     </div>
     <div class="row">
       <div class="col-md-6">
-        <form ng-submit="show='true'" ng-hide="show">
+        <form ng-submit="show=1" ng-hide="show">
           <div class="form-group">
             <label for="name">Boy's Name</label>
             <input class="form-control" type="text" name="name" ng-model="name" placeholder="Enter a boy's name..."><br> 
@@ -33,6 +33,7 @@
           </div>
         </form>
         <h3 ng-show="show">I'm in love with <span>{{name}}</span>. He's so <span>{{adj}}</span>! He has big flat <span>{{pnoun1}}</span>, and when our <span>{{pnoun2}}</span> meet, I get <span>{{insect}}</span> in my stomach. I've fallen for him like a ton of <span>{{pnoun3}}</span>, and he <span>{{verb}}</span> for me, too. But I think he's got another girlfriend. What should I do?</h3>
+        <button ng-show="show" ng-click="show=0" class="btn btn-danger">Try Again!</button>
       </div>
     </div>
   </div>
