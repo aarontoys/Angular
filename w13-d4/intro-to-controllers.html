@@ -3,6 +3,7 @@
 <head>
   <title>Intro to controllers</title>
   <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
   <script type="text/javascript" src="app.js"></script>
 </head>
 <body>
@@ -13,8 +14,14 @@
         <h3>My name is: {{name}}</h3>
         <input ng-model="name" type="text" placeholder="What is your name">
       </div>
+      <p>My name is {{name}}</p>
       <hr>
-      
+      <h1>Exercise 1: </h1>
+      <div ng-controller="ExerciseController">
+        <p>My favorite color is {{FavColor}} seconds in a century.</p>
+        <p>There are {{secondsInACentruy | number}}.</p>
+        <p>The current date is {{rightNow | date : 'fullDate'}}.</p>
+      </div>
     </div>
   </div> 
 </body>
