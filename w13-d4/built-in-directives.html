@@ -5,6 +5,17 @@
   <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
   <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 </head>
+<style>
+  .valid {
+    color: green;
+  }
+
+  .invalid {
+    color: red;
+    background-color: black;
+  }
+
+</style>
 <body>
   <div class="container">
     <div class="row" style="background:lightgrey">
@@ -59,12 +70,11 @@
       <hr>
       <h2>Sign-up page exercise</h2>
       <h3>Sign Up!</h3>
-      <input type="password" ng-model="pword" ><br><br>
+      <input ng-class="(pword.length || 0) < 6  ? 'invalid' : 'valid'" type="password" ng-model="pword" ><br><br>
       
-      <p>Your password is {{pword.length || 0}} {{pwordCount}}
+      <p ng-class="(pword.length || 0) < 6  ? 'invalid' : 'valid'">Your password is {{pword.length || 0}} {{pwordCount}}
       <ng-pluralize count="pword || 0"
                  when="{
-
                      'one': 'character',
                      'other': 'characters'}">
       </ng-pluralize>
