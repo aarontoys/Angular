@@ -6,6 +6,24 @@
   <script type="text/javascript" src="events.js"></script>
   <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 </head>
+<style>
+  .pong {
+    height: 200px;
+  }
+  .playing {
+    background-color: skyblue;
+  }
+  .winner {
+    background-color: green;
+  }
+  .loser {
+    background-color: red;
+  }
+  .center-block {
+    width: 100%;
+  }
+
+</style>
 <body>
   <div class="container" ng-controller="MainController">
     <div class="row">
@@ -16,16 +34,39 @@
       <h3>Events - Exercise 1</h3>
       <h4>Q: Explain in as much detail as you can what happens when you click the button. Why does number update in the template without us telling it to?</h4>
       <p><strong>A:</strong> When I click the button, ng-click, which is insdie a ng-contoller tag, calls the pickRandomNumber function which sets the number variable to the random number as describe by the function. It automatically updates because that's what Angular does, it listens or watches for updates to variables and then updates them on the front end.</p>
-    </div>
-    <hr>
-    <h3>Events - Exercise 2</h3>
-    <div class="form-group col-md-4">
+      <hr>
+      <h3>Events - Exercise 2</h3>
+      <div class="form-group col-md-4">
       <label for="reverse">Word Reverse:  </label>
       <input type="text" class="form-control" id="reverse" placeholder="Enter a word..." ng-model="word"><br>
       <p>Your word: {{word}}</p>
       <button class="btn btn-primary" ng-click="reverseWord(word)">Reverse</button>
+      </div>
+    </div>
+    <div class="row">
+      <hr>
+      <h3 class="text-center">Events - Exercise 3 - Ping Pong Score Keeper</h3>
+      <div class="col-md-3 col-md-offset-2 pong" ng-repeat="player in players" ng-click="addScore(player)" ng-class="{winner: player.winner === 1, loser: player.winner === 0, playing: player.winner === -1}">
+        
+        <h2 class="text-center">Player {{player.id}}</h2>
+        <h1 class="text-center">{{player.score}}</h1>
+        <h2 class="text-center" ng-show="player.serving">Serving</h2>
+        <h2 ng-show="!player.serving">&nbsp;</h2>
+        <p>Games won: {{player.gamesWon}}</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-2 col-md-offset-5">
+        <button class="btn btn-default center-block" ng-show="newGame" ng-click="startNewGame()">New Game</button><br>
+        <button class="btn btn-primary center center-block" ng-click="reset()">Reset</button>
+      </div>
+    </div>
+    <!--  <div class="col-md-4 col-md-offset-2" style="height:400px;background-color:skyblue;" ng-click="addScore(2)">
+      <h2 class="text-center">Player 2</h2>
+      <h1 class="text-center">{{player2}}</h1>
+    </div> -->
   </div>
-  </div>
+
 
 </body>
 </html>
