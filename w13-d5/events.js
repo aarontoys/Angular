@@ -1,6 +1,6 @@
 var app = angular.module("events",[]);
 
-app.controller('MainController', function ($scope) {
+app.controller('MainController', function ($scope, $timeout) {
   $scope.number = 5;
   $scope.pickRandomNumber = function () {
     $scope.number = Math.floor(Math.random()*10)+1;
@@ -63,6 +63,7 @@ app.controller('MainController', function ($scope) {
   }
 
   $scope.enterCount = 0;
+  $scope.colorArr = [];
   $scope.randomColor = function () {
     var x=Math.round(0xffffff * Math.random()).toString(16);
     // console.log('hex: ',0xffffff);
@@ -73,8 +74,33 @@ app.controller('MainController', function ($scope) {
     // console.log('z: ',z);
     var z1 = z.substring(0,y);
     // console.log('z1: ',z1);
-    // var color = "#" + z1 + x;
-    console.log('color: ',color);
+    var color = "#" + z1 + x;
+    // console.log('color: ',color);
+    $scope.colorArr.push(color);
     return color;
   }
+
+  var replaying = false;
+
+$scope.replay = function() {
+  var displayPrevColor = function() {
+    // do some logic to change color
+    // if done replay colors
+    for (i = 0; i < $scope.colorArr.length; i++) {
+      console.log($scope.colorArr[i]);
+      return $scope.colorArr[i];
+    }
+    
+
+      replaying = false;
+    // else
+      $timeout(dispalyPrevColor, 1000);
+    // end if/else 
+  };
+  if (!replaying) {
+    replaying = true;
+    // This timeout starts the timeout loop
+    $timeout(function() { displayPrevColor(); }, 500);
+  }
+};
 });

@@ -77,8 +77,10 @@
     <div class="row">
       <h3>Exercise: Random Colors</h3>
       <div class="divbox" ng-mouseenter="rndCol = randomColor()" ng-style="{'background-color':rndCol}">
-      <p>{{rndCol}}</p>        
+      <p>{{rndCol}}</p>
+      <p>{{colorArr}}</p>        
       </div>
+      <button class="btn btn-default" ng-click="replay()">Replay</button>
     </div>
   </div>
 
