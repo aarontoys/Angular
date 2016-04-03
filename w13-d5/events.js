@@ -61,4 +61,20 @@ app.controller('MainController', function ($scope) {
     $scope.players[0].gamesWon = 0;
     $scope.players[1].gamesWon = 0;
   }
+
+  $scope.enterCount = 0;
+  $scope.randomColor = function () {
+    var x=Math.round(0xffffff * Math.random()).toString(16);
+    // console.log('hex: ',0xffffff);
+    // console.log('x: ',x);
+    var y=(6-x.length);
+    // console.log('y: ',y);
+    var z="000000";
+    // console.log('z: ',z);
+    var z1 = z.substring(0,y);
+    // console.log('z1: ',z1);
+    // var color = "#" + z1 + x;
+    console.log('color: ',color);
+    return color;
+  }
 });
