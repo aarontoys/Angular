@@ -94,7 +94,7 @@
       Favorite Pi: {{favoriteForm.favoritePie}}
     </div>
     <hr>
-    <div class="row"></div>
+    <div class="row">
       <h3>ng-submit Exercise 1:</h3>
       <form class="col-md-4" ng-submit="submitAddress(address)" name="addrForm">
         Street (Line 1):<br>
@@ -117,6 +117,46 @@
         {{address.city}}, {{address.state}}<br>
         {{address.zip}}
       </div>
+    </div>
+    <hr>
+    <div class="row">
+      <h3>Exercise: Contacts App</h3>
+      <form class="form-inline" ng-submit="addContact(contact)">
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" class="form-control" name="name" placeholder="Jane Doe" ng-model="contact.name">
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" class="form-control" name="email" placeholder="jane.doe@example.com" ng-model="contact.email">
+        </div>
+        <div class="form-group">
+          <label for="phone">Email</label>
+          <input type="text" class="form-control" name="phone" placeholder="(555) 555-5555" ng-model="contact.phone">
+        </div>
+        <button type="submit" class="btn btn-primary">Add Contact</button><br><br>
+        <div class="for-group">
+          <label for="search">Search <span class="glyphicon glyphicon-search"></span></label>
+          <input type="text" class="form-control" name="search" ng-model="contactSearch">
+        </div>
+        <p class="text-center"><strong>{{contact}}</strong></p>
+      </form>
+    </div>
+    <div class="row">
+      <p>{{contactSearch}}</p>
+      <table class="table table-striped">
+        <tr>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Phone</th>
+        </tr>
+        <tr ng-repeat="contact in contacts | filter:contactSearch:true">
+          <td>{{contact.name}}</td>
+          <td>{{contact.email}}</td>
+          <td>{{contact.phone}}</td>
+        </tr>
+      </table>
+    </div>
   </div>
 
 

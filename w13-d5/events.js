@@ -115,7 +115,7 @@ $scope.favoriteForm = {};
   };
 
   $scope.addresses = [];
-  $scope.newAdd = {};
+  // $scope.newAdd = {};
   $scope.submitAddress = function (myAdd) {
     $scope.addresses.push(myAdd);
     // $scope.showAdd = true;
@@ -123,8 +123,15 @@ $scope.favoriteForm = {};
     // $scope.newAdd  = $scope.address;
     // console.log(myAdd);
     // console.log(myAdd.line1);
-        $scope.address = null;
+        $scope.address = {};
         // document.getElementsByName('addrForm')[0].reset();
 
+  }
+
+  // Contacts App Exercise
+  $scope.contacts = [];
+  $scope.addContact = function (contact) {
+    $scope.contacts.push(contact);
+    $scope.contact = {};
   }
 });
