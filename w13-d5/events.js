@@ -90,7 +90,7 @@ $scope.replay = function() {
       console.log($scope.colorArr[i]);
       return $scope.colorArr[i];
     }
-    
+
 
       replaying = false;
     // else
@@ -103,4 +103,28 @@ $scope.replay = function() {
     $timeout(function() { displayPrevColor(); }, 500);
   }
 };
+
+$scope.favoriteForm = {};
+  $scope.submitFav = function() {
+    var favPi = parseFloat($scope.favoriteForm.favoritePie);
+    // Special output if the favorite pie is a certain number
+    if (!isNaN(favPi) && favPi >= 3.14 && favPi <= 3.142) {
+      $scope.favoriteForm.favoritePie = "\u03A0";
+    }
+    console.log("Your favorite pie is: ", $scope.favoriteForm.favoritePie);
+  };
+
+  $scope.addresses = [];
+  $scope.newAdd = {};
+  $scope.submitAddress = function (myAdd) {
+    $scope.addresses.push(myAdd);
+    // $scope.showAdd = true;
+    // $scope.newAdd = {};
+    // $scope.newAdd  = $scope.address;
+    // console.log(myAdd);
+    // console.log(myAdd.line1);
+        $scope.address = null;
+        // document.getElementsByName('addrForm')[0].reset();
+
+  }
 });

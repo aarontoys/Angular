@@ -82,6 +82,41 @@
       </div>
       <button class="btn btn-default" ng-click="replay()">Replay</button>
     </div>
+    <hr>
+    <div class="row">
+      <h3>ng-submit Example</h3>
+      <form ng-submit="submitFav()" name="favPieForm">
+        <input name="name" type="text" ng-model="favoriteForm.name">
+        <input name="favorite_pie" type="text" ng-model="favoriteForm.favoritePie">
+        <input type="submit">
+      </form>
+      Name: {{favoriteForm.name}}<br>
+      Favorite Pi: {{favoriteForm.favoritePie}}
+    </div>
+    <hr>
+    <div class="row"></div>
+      <h3>ng-submit Exercise 1:</h3>
+      <form class="col-md-4" ng-submit="submitAddress(address)" name="addrForm">
+        Street (Line 1):<br>
+        <input class="form-control" name="line1" type="text" ng-model="address.line1"><br>
+        Street (Line 2):<br>
+        <input class="form-control" name="line2" type="text" ng-model="address.line2"><br> 
+        City:<br>
+        <input class="form-control" name="city" type="text" ng-model="address.city"><br> 
+        State:<br>
+        <input class="form-control" name="state" type="text" ng-model="address.state"><br> 
+        Zip Code:<br>
+        <input class="form-control" name="zip" type="text" ng-model="address.zip"><br>
+
+        <input class="btn btn-primary" type="submit">
+      </form>
+      <br>
+      <div ng-repeat="address in addresses track by $index">
+        {{address.line1}}<br>
+        {{address.line2}}<br>
+        {{address.city}}, {{address.state}}<br>
+        {{address.zip}}
+      </div>
   </div>
 
 
