@@ -134,4 +134,5 @@ $scope.favoriteForm = {};
     $scope.contacts.push(contact);
     $scope.contact = {};
   }
+
 });
